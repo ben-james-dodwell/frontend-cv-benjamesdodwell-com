@@ -43,18 +43,18 @@ jobs:
       run: terraform plan -out=tfplan -input=false
 
     - name: Terraform Apply
-      if: ${{ !contains('No changes. Your infrastructure matches the configuration.', steps.tfplan.outputs.stdout) }}
+      if: ${{ !contains(steps.tfplan.outputs.stdout, 'No changes. Your infrastructure matches the configuration.') }}
       working-directory: ./terraform
       run: terraform apply -auto-approve -input=false tfplan
 
     - name: Terraform Output
-      if: ${{ !contains('No changes. Your infrastructure matches the configuration.', steps.tfplan.outputs.stdout) }}
+      if: ${{ !contains(steps.tfplan.outputs.stdout, 'No changes. Your infrastructure matches the configuration.') }}
       id: tfoutput
       working-directory: ./terraform
       run: terraform output -raw cf_id
 
     - name: Create CloudFront Cache Invalidation
-      if: ${{ !contains('No changes. Your infrastructure matches the configuration.', steps.tfplan.outputs.stdout) }}
+      if: ${{ !contains(steps.tfplan.outputs.stdout, 'No changes. Your infrastructure matches the configuration.') }}
       run: aws cloudfront create-invalidation --distribution-id ${{ steps.tfoutput.outputs.stdout }} --paths '/*'
 
         
