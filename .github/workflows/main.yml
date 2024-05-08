@@ -45,7 +45,7 @@ jobs:
     - name: test
       run: |
         echo ${{ steps.tfplan.outputs.stdout }}
-        echo ${{ !contains(steps.tfplan.outputs.stdout, 'No changes. Your infrastructure matches the configuration.') }}
+        echo ${{ !contains(steps.tfplan.outputs.stdout, 'Your infrastructure matches the configuration.') }}
 
     - name: Terraform Apply
       if: ${{ !contains(steps.tfplan.outputs.stdout, 'No changes. Your infrastructure matches the configuration.') }}
