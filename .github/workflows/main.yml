@@ -45,16 +45,13 @@ jobs:
       working-directory: ./terraform
       run: terraform apply -auto-approve -input=false tfplan
 
-    - name: step output
-      run: echo 
-
     - name: Terraform Output
       id: tfoutput
       working-directory: ./terraform
       run: terraform output -raw cf_id
 
     - name: Create CloudFront Cache Invalidation
-      run: aws cloudfront create-invalidation --distribution-id ${{ steps.tfoutput.outputs.cf_id }} --paths '/*'
+      run: aws cloudfront create-invalidation --distribution-id ${{ steps.tfoutput.outputs.stdout }} --paths '/*'
 
         
 
