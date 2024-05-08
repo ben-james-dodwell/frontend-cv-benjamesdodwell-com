@@ -51,7 +51,7 @@ resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.cv.id
   key          = "index.html"
   source       = "../index.html"
-  etag         = filemd5("../index.html")
+  source_hash  = filemd5("../index.html")
   content_type = "text/html"
 }
 
@@ -167,3 +167,4 @@ resource "aws_route53_record" "cv_benjamesdodwell_com" {
     zone_id                = "Z2FDTNDATAQYW2"
   }
 }
+
