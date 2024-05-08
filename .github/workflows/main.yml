@@ -42,5 +42,9 @@ jobs:
       run: terraform plan -out=tfplan -input=false
 
     - name: Terraform Apply
+      id: tfapply
       working-directory: ./terraform
       run: terraform apply -auto-approve -input=false tfplan
+
+    - name: step output
+      run: echo ${step.tfapply.output}
