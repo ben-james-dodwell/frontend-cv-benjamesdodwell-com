@@ -34,3 +34,11 @@ override.tf.json
 terraform.rc
 
 *_payload.zip
+
+# Tailwind CSS
+.log/
+node_modules/
+docs/
+css/
+export.scss
+export/

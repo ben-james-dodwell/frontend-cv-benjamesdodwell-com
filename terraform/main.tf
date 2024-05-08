@@ -50,9 +50,17 @@ resource "aws_s3_bucket_policy" "public_access" {
 resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.cv.id
   key          = "index.html"
-  source       = "../index.html"
-  source_hash  = filemd5("../index.html")
+  source       = "../src/index.html"
+  source_hash  = filemd5("../src/index.html")
   content_type = "text/html"
+}
+
+resource "aws_s3_object" "css" {
+  bucket       = aws_s3_bucket.cv.id
+  key          = "output.css"
+  source       = "../src/output.css"
+  source_hash  = filemd5("../src/output.css")
+  content_type = "text/css"
 }
 
 # Create CloudFront distribution
