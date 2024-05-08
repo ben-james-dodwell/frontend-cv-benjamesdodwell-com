@@ -42,6 +42,11 @@ jobs:
       working-directory: ./terraform
       run: terraform plan -out=tfplan -input=false
 
+    - name: test
+      run: |
+        echo ${{ steps.tfplan.outputs.stdout }}
+        echo ${{ !contains(steps.tfplan.outputs.stdout, 'No changes. Your infrastructure matches the configuration.') }}
+
     - name: Terraform Apply
       if: ${{ !contains(steps.tfplan.outputs.stdout, 'No changes. Your infrastructure matches the configuration.') }}
       working-directory: ./terraform
