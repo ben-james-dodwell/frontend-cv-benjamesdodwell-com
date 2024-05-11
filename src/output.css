@@ -978,6 +978,16 @@ video {
     display: none;
   }
 
+  .print\:break-before-all {
+    -moz-column-break-before: all;
+         break-before: all;
+  }
+
+  .print\:break-before-page {
+    -moz-column-break-before: page;
+         break-before: page;
+  }
+
   .print\:flex-col {
     flex-direction: column;
   }
