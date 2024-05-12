@@ -28,8 +28,7 @@ data "aws_iam_policy_document" "public_access" {
     }
 
     actions = [
-      "s3:GetObject",
-      "s3:ListBucket",
+      "s3:GetObject"
     ]
 
     resources = [
