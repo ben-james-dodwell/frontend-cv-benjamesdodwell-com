@@ -63,12 +63,12 @@ resource "aws_s3_object" "css" {
   content_type = "text/css"
 }
 
-resource "aws_s3_object" "css" {
+resource "aws_s3_object" "favicon" {
   bucket       = aws_s3_bucket.cv.id
   key          = "favicon.ico"
   source       = "../src/favicon.ico"
   source_hash  = filemd5("../src/favicon.ico")
-  content_type = "text/css"
+  content_type = "image/x-icon"
 }
 
 # Create CloudFront distribution
