@@ -23,7 +23,7 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 data "aws_iam_policy_document" "public_access" {
   statement {
     principals {
-      type        = "AWS"
+      type        = "*"
       identifiers = ["*"]
     }
 
@@ -32,8 +32,7 @@ data "aws_iam_policy_document" "public_access" {
     ]
 
     resources = [
-      aws_s3_bucket.cv.arn,
-      "${aws_s3_bucket.cv.arn}/*",
+      "${aws_s3_bucket.cv.arn}/*"
     ]
   }
 }
