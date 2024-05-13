@@ -85,19 +85,27 @@
         <h2 class="pb-2 text-2xl font-bold text-cv-blue lg:pb-4">Skills, Tools, and Technologies</h2>
 
         <ul class="flex flex-col space-y-2 text-sm list-outside lg:space-y-4">
-          <li>
-            PowerShell, VMware ESXi/vSphere, HPE Nimble/Alletra SAN, Hyper-V. Active Directory, Microsoft SQL Server,
-            Microsoft Exchange, IIS, Failover Clustering, Remote Desktop Services, Microsoft Deployment Toolkit, Windows
-            Server Update Services.
+          <li> <!-- DevOps -->
+            Ansible, Terraform, Python, PowerShell, Docker, Git, GitHub, GitLab, Jira, Confluence.
           </li>
-          <li>
-            TCP/IP, DNS, DHCP. FortiGate and ASA firewalls, VPN, load balancing, WAF. Basic HP and Cisco switch
-            configuration and management.
+          <li> <!-- AWS -->
+            AWS, IAM, Route 53, S3, CloudFront, Lambda, DynamoDB, ACM, API Gateway.
           </li>
-          <li>
-            Ansible, Terraform, Azure DevOps.
+          <li> <!-- Microsoft Stack -->
+            Azure, Entra ID, AutoPilot, Intune.
+            Active Directory, Microsoft Exchange, Microsoft SQL Server, IIS, Remote Desktop Services.
           </li>
-          <li>
+          <li> <!-- Linux Stack -->
+            RHEL, CentOS, Rocky Linux, Ubuntu. Apache, PostgreSQL, MySQL, MariaDB, Zabbix, FreeRadius.
+          </li>
+          <li> <!-- Virtualisation -->
+            VMware ESXi/vSphere, Hyper-V, HPE Nimble/Alletra SAN.
+          </li>
+          <li> <!-- Networking -->
+            TCP/IP, DNS, DHCP, VPN. FortiGate, Cisco ASA, SonicWall firewalls. HPE, Cisco switches.
+          </li>
+
+          <li> <!-- Web Development -->
             HTML, CSS, JavaScript, PHP, Laravel, Vue.
           </li>
         </ul>
@@ -113,14 +121,12 @@
         <h2 class="pb-2 text-2xl font-bold text-cv-blue lg:pb-4">Profile</h2>
 
         <p>
-          A dedicated, reliable and motivated IT professional with experience supporting ISO 9001, ISO 27001, and
-          PCI-DSS
-          compliant environments in education, outsourcing, finance and banking, and software development industries.
-          Excellent problem-solving skills developed during support, and infrastructure roles. Able to design and
-          implement technical solutions to meet user requirements on time and to the highest standards. Achieved a
-          bachelor's degree with first-class honours in Computing and IT with a software specialism. Continuing
-          professional development in cloud services, DevOps methodologies, and web development with PHP and Laravel
-          framework.
+          A dedicated, reliable and results-oriented IT professional with experience supporting ISO 9001, ISO 27001, and
+          PCI-DSS compliant environments across diverse sectors including software development, healthcare, finance,
+          banking, and education. Proficient in designing and implementing technical solutions that align
+          with user requirements, consistently delivering projects on time and to the highest standards. Demonstrated expertise in problem-solving skills acquired through roles spanning support and infrastructure management. Achieved a bachelor's degree with first-class honours in Computing and IT, specialising in software.
+          Committed to continuous professional growth and enhancement of skills, particularly in cloud engineering, DevOps methodologies, and
+          web development with PHP and Laravel framework.
         </p>
 
       </article> <!--- Profile -->
@@ -133,25 +139,126 @@
 
           <h3 class="pb-2 font-bold text-cv-blue lg:pb-4">
             <p class="flex flex-col lg:flex lg:justify-between lg:flex-row lg:items-center">
+              <span class="text-xl">IT Infrastructure and SecOps Lead</span>
+              <span class="text-lg">11/2023 - Present</span>
+            </p>
+            <p>Magentus - Mansfield</p>
+          </h3>
+
+          <ul class="flex flex-col pl-6 space-y-2 list-disc list-outside marker:text-cv-blue">
+            <li>
+              Expanded on the implementation of the Druva backup solution to include disaster recovery as a service,
+              replicating backup snapshots into an AWS account allowing failover to EC2 instances, allowing the company
+              to meet Recovery Point Objectives (RPO) and Recovery Time Objectives (RTO).
+            </li>
+            <li>
+              Defined AWS infrastructure as code with Terraform, including Continuous Integration and Continuous
+              Deployment (CI/CD) pipelines with GitHub Actions workflows, to introduce automation, improving consistency
+              and scalability across the cloud infrastructure.
+            </li>
+            <li>
+              Supported the business hardware standardisation strategy by migrating from SonicWall to FortiGate
+              firewalls, whilst minimising disruption to NHS customers by maintaining connectivity via VPNs
+              and the HSCN network.
+            </li>
+            <li>
+              Piloted a proof-of-concept and subsequently delivered the production implementation of CloudFlare Zero
+              Trust Network Access (ZTNA) to replace traditional peer-to-site (P2S) VPNs. This strategic approach
+              enhanced security by providing granular access controls based on user identity and device posture.
+            </li>
+            <li>
+              Took ownership of vulnerability management by proactively using Tenable and CrowdStrike reporting,
+              alongside Azure Arc for automated patching, to reduce overall detected vulnerabilities across the estate
+              by almost 70% and critical vulnerabilities by almost 90%, within a 2 month period.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="pb-2 lg:pb-4">
+
+          <h3 class="pb-2 font-bold text-cv-blue lg:pb-4">
+            <p class="flex flex-col lg:flex lg:justify-between lg:flex-row lg:items-center">
+              <span class="text-xl">IT Infrastructure Lead</span>
+              <span class="text-lg">05/2023 - 11/2023</span>
+            </p>
+            <p>Magentus - Mansfield</p>
+          </h3>
+
+          <ul class="flex flex-col pl-6 space-y-2 list-disc list-outside marker:text-cv-blue">
+            <li>
+              Orchestrated a migration and consolidation of VMware ESXi hosts and vCenter servers, reducing operational
+              costs by cutting licensing requirements, while reducing operational risk by making better usage of
+              available features to improve manageability, redundancy, and resiliency.
+            </li>
+            <li>
+              Modernised the backup strategy by leading a proof-of-concept and successful onboarding of Druva, an
+              AWS-backed immutable solution. This initiative, which encompassed securing approximately 30TB of
+              on-premises data and 15TB of Microsoft 365 data, set a standard for data protection which was adopted
+              globally by the company.
+            </li>
+            <li>
+              Enhanced the organization's observability capabilities by deploying Zabbix to provide monitoring of
+              infrastructure, including hardware, networks and applications. Proactive detection and alerting improved
+              the ability to maintain optimal system uptime and performance.
+            </li>
+            <li>
+              Utilised FreeRadius, SCEPman, and Intune, to update the Meraki WiFi network to WPA2 Enterprise for
+              improved security and dynamic VLAN assignment.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="pb-2 lg:pb-4">
+
+          <h3 class="pb-2 font-bold text-cv-blue lg:pb-4">
+            <p class="flex flex-col lg:flex lg:justify-between lg:flex-row lg:items-center">
+              <span class="text-xl">IT Infrastructure Engineer</span>
+              <span class="text-lg">09/2022 - 05/2023</span>
+            </p>
+            <p>Magentus (formerly Wellbeing Software) - Mansfield</p>
+          </h3>
+
+          <ul class="flex flex-col pl-6 space-y-2 list-disc list-outside marker:text-cv-blue">
+            <li>
+              Facilitated a major organisational rebrand, ensuring a seamless migration of Azure AD tenancy for
+              approximately 200 users and devices, 500 SharePoint sites and over 3TB of data.
+            </li>
+            <li>
+              Elevated the organization's cybersecurity posture by onboarding Mimecast for email security and awareness
+              training.
+            </li>
+            <li>
+              Developed Ansible roles for Windows and RHEL Linux servers, focusing on a security baselines, including
+              agent deployments for CrowdStrike EDR, Rapid7 IDR, and Tenable Nessus vulnerability scanning.
+          </ul>
+
+        </section>
+
+        <section class="pb-2 lg:pb-4">
+
+          <h3 class="pb-2 font-bold text-cv-blue lg:pb-4">
+            <p class="flex flex-col lg:flex lg:justify-between lg:flex-row lg:items-center">
               <span class="text-xl">IT Manager</span>
-              <span class="text-lg">05/2022 - Present</span>
+              <span class="text-lg">05/2022 - 09/2022</span>
             </p>
             <p>Parseq Ltd - Rotherham</p>
           </h3>
 
           <ul class="flex flex-col pl-6 space-y-2 list-disc list-outside marker:text-cv-blue">
             <li>
-              Responsible for recruitment, training, and management of staff including Infrastructure, Network, and
+              Recruited, trained, and supervised staff including Infrastructure, Network, and
               Technical Support engineers.
             </li>
             <li>
-              Manage supplier relationships, purchases of hardware, software, licensing, and support in line with the
-              department budget.
+              Managed vendor relationships and procurement activities, encompassing hardware, software, licensing, and
+              support services, while adhering to departmental budgetary constraints.
             </li>
             <li>
-              Support ISO 9001, ISO 27001, and PCI-DSS standards; working closely with internal and external auditors
-              to
-              ensure that controls are effective.
+              Provided support for ISO 9001, ISO 27001, and PCI-DSS standards, collaborating closely with internal and
+              external auditors
+              to ensure the effectiveness of controls and compliance with regulatory requirements.
             </li>
           </ul>
 
@@ -169,45 +276,46 @@
 
           <ul class="flex flex-col pl-6 space-y-2 list-disc list-outside marker:text-cv-blue">
             <li>
-              Promoted to manage the organisation infrastructure; responsible for hardware and software systems,
-              including
-              storage, virtualisation, and network, with backup and disaster recovery solutions.
+              Promoted to manage organisational infrastructure, overseeing hardware and software systems covering
+              storage, virtualisation, networking, backup, and disaster recovery solutions.
             </li>
             <li>
-              Led migration from on-premises Microsoft Exchange to Exchange Online and Azure Active Directory;
-              incorporating conditional access with endpoint manager for improved data security.
+              Led a migration from on-premises Microsoft Exchange to Exchange Online and Azure Active Directory,
+              integrating conditional access for enhanced data security.
             </li>
             <li>
-              Built new on-premises Active Directory forests and domains to support legacy migrations, utilising Group
-              Policy to manage user and computer configuration, including security hardening policies to meet PCI-DSS
-              requirements.
+              Established new on-premises Active Directory forests and domains to facilitate legacy migrations,
+              employing Group
+              Policy to administer user and computer configuration, including PCI-DSS compliant security hardening
+              policies.
             </li>
             <li>
-              Designed and implemented resilient, redundant, scalable, and secure web hosting infrastructure for a
-              business-critical client-facing project using IIS, Microsoft SQL Server, Windows Server Failover
-              Clustering,
-              load balancing, SSL/TLS offloading, web application firewall, and Duo Security 2FA.
+              Designed and implemented a resilient, redundant, and scalable web hosting infrastructure for a
+              mission-critical client-facing project. Leveraged technologies such as IIS, Microsoft SQL Server, Windows
+              Server Failover
+              Clustering, as well as FortiGate firewalls for load balancing, SSL/TLS offloading, and Web Application
+              Firewall (WAF) security.
             </li>
             <li>
-              Built and maintained WSUS servers and Ansible playbooks for patching over 200 Windows Server and over
-              300
-              Windows Desktop operating systems. Responsible for patching VMware ESXi hosts, vCenter Server, Nimble,
-              and
-              Linux servers and appliances.
+              Implemented and maintained WSUS servers and developed Ansible playbooks for patching over 200 Windows
+              Server and 300
+              Windows Desktop operating systems. Also responsible for patching VMware ESXi hosts, vCenter Server, Nimble
+              SAN,
+              and other appliances.
             </li>
             <li>
-              Redesigned LAN alongside the network engineer, adding and updating VRF instances, subnets, VLANs, and
-              firewall policies with a goal to decommission legacy firewalls and switches.
+              Redesigned the LAN infrastructure in coordination with network engineers, modernizing operations with the
+              strategic objective of decommissioning legacy hardware.
             </li>
             <li>
-              Created and maintained internal documentation and videos detailing systems and processes for technical
-              reference, audit evidence, and training materials.
+              Collaborated with application developers, project managers, and business analysts, to manage deployments
+              of
+              internally developed software systems into test and production environments.
             </li>
             <li>
-              Investigated and introduced DevOps methodologies and best practices to the business with support of
-              senior
-              leadership, implementing Infrastructure as Code (IaC) using Terraform to provision virtual machines, and
-              Ansible to manage configuration and application deployment.
+              Introduced DevOps methodologies and best practices, gaining support from senior leadership and
+              implementing Infrastructure as Code (IaC) using Terraform for virtual machine provisioning and Ansible for
+              configuration management and application deployment.
             </li>
           </ul>
 
@@ -228,20 +336,20 @@
               Provided hardware and application technical support in a 300+ user environment.
             </li>
             <li>
-              Automated and streamlined manual processes, including workstation deployment with WDS and MDT, and
-              onboarding/offboarding users with custom PowerShell scripts.
-            </li>
-            <li>
-              Worked with application developers, project managers, and business analysts, to manage deployments of
-              internally developed software systems to test and production environments.
+              Automated and streamlined manual processes, such as workstation deployment using WDS and MDT, and user
+              onboarding/offboarding via custom PowerShell scripts.
             </li>
             <li>
               Supported users with the Microsoft 365 office suite, including SharePoint and Teams.
             </li>
             <li>
-              Developed excellent troubleshooting skills, resolving incidents to meet operational SLAs, then
-              documenting
-              and performing root cause analysis to work towards permanent solutions.
+              Developed excellent troubleshooting skills by resolving incidents within operational SLAs, then
+              conducting thorough root cause analysis to implement permanent solutions.
+            </li>
+            <li>
+              Created and maintained comprehensive internal documentation and instructional videos outlining systems and
+              processes for technical
+              reference, audit compliance, and training purposes.
             </li>
           </ul>
 
