@@ -1,6 +1,6 @@
 # Create S3 bucket
 resource "aws_s3_bucket" "cv" {
-  bucket = "cv.benjamesdodwell.com"
+  bucket = var.FRONTEND_BUCKET
 }
 
 resource "aws_s3_bucket_website_configuration" "cv" {
