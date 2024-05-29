@@ -2,8 +2,9 @@ name: 'Deploy'
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "master" ]
+  workflow_run:
+    workflows: [Test]
+    types: [completed]
 
 permissions:
   id-token: write
@@ -18,6 +19,7 @@ jobs:
       run:
         shell: bash
 
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - name: Configure aws credentials
       uses: aws-actions/configure-aws-credentials@v4
@@ -40,7 +42,7 @@ jobs:
     - name: Terraform Plan
       id: tfplan
       working-directory: ./terraform
-      run: terraform plan -out=tfplan -input=false -var="FRONTEND_BUCKET=${{ secrets.FRONTEND_BUCKET }}"
+      run: terraform plan -out=tfplan -input=false -var="aws_account=${{ secrets.AWS_ACCOUNT }}" -var="FRONTEND_BUCKET=${{ secrets.FRONTEND_BUCKET }}" -var="LOGGING_BUCKET=${{ secrets.LOGGING_BUCKET }}"
 
     - name: Terraform Apply
       if: ${{ !contains(steps.tfplan.outputs.stdout, 'Your infrastructure matches the configuration.') }}
