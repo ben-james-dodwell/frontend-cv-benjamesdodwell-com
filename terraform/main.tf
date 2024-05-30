@@ -136,7 +136,7 @@ resource "aws_s3_bucket" "logging" {
   force_destroy = true
 }
 
-resource "aws_s3_bucket_lifecycle_configuration" "cv_retention" {
+resource "aws_s3_bucket_lifecycle_configuration" "retention" {
   bucket = aws_s3_bucket.logging.id
 
   rule {
@@ -152,11 +152,10 @@ resource "aws_s3_bucket_lifecycle_configuration" "cv_retention" {
   }
 
   rule {
-    id     = "cv_retention"
+    id     = "retention"
     status = "Enabled"
 
     filter {
-      prefix = "cv"
     }
 
     transition {
