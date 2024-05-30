@@ -167,6 +167,15 @@ resource "aws_s3_bucket_lifecycle_configuration" "cv_retention" {
     expiration {
       days = 60
     }
+
+    noncurrent_version_transition {
+      noncurrent_days = 7
+      storage_class = "GLACIER_IR"
+    }
+
+    noncurrent_version_expiration {
+      noncurrent_days = 14
+    }
   }
 }
 
