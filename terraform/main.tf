@@ -131,10 +131,43 @@ resource "aws_s3_bucket" "logging" {
   #checkov:skip=CKV_AWS_144:Cross-region replication not required for logging bucket.
   #checkov:skip=CKV_AWS_18:Access logging not required for logging bucket.
   #checkov:skip=CKV2_AWS_62:Event notifications not required for logging bucket.
-  #checkov:skip=CKV2_AWS_61:Lifecycle configuration not required for logging bucket.
   bucket = var.LOGGING_BUCKET
 
   force_destroy = true
+}
+
+resource "aws_s3_bucket_lifecycle_configuration" "cv_retention" {
+  bucket = aws_s3_bucket.logging.id
+
+  rule {
+    id     = "abort_incomplete_multipart_upload"
+    status = "Enabled"
+
+    filter {
+    }
+
+    abort_incomplete_multipart_upload {
+      days_after_initiation = 3
+    }
+  }
+
+  rule {
+    id     = "cv_retention"
+    status = "Enabled"
+
+    filter {
+      prefix = "cv"
+    }
+
+    transition {
+      days = 30
+      storage_class = "GLACIER_IR"
+    }
+
+    expiration {
+      days = 60
+    }
+  }
 }
 
 resource "aws_s3_bucket_public_access_block" "logging_public_access_block" {
